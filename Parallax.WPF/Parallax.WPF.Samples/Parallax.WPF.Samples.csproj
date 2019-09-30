@@ -4,17 +4,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{706D6FB8-6DE7-44C0-8853-D4FDA84855C2}</ProjectGuid>
-    <OutputType>library</OutputType>
-    <RootNamespace>Parallax.WPF</RootNamespace>
-    <AssemblyName>Parallax.WPF</AssemblyName>
+    <ProjectGuid>{D347A7C0-D6DE-467A-B983-DD6260DDD601}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Parallax.WPF.Samples</RootNamespace>
+    <AssemblyName>Parallax.WPF.Samples</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +26,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -48,19 +51,32 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Base\ParallaxContainer.cs" />
-    <Compile Include="Controls\Base\ParallaxLayer.cs" />
-    <Compile Include="Controls\MouseAwareParallaxContainer.xaml.cs">
-      <DependentUpon>MouseAwareParallaxContainer.xaml</DependentUpon>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\ParallaxImageLayer.xaml.cs">
-      <DependentUpon>ParallaxImageLayer.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\ParallaxObjectLayer.xaml.cs">
-      <DependentUpon>ParallaxObjectLayer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Enum\MouseAwarenessEnum.cs" />
-    <Compile Include="Helpers\Constants.cs" />
+    <Page Include="ParallaxViews\ParallaxObjectsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParallaxViews\Views.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -84,21 +100,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Animations\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\MouseAwareParallaxContainer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ParallaxImageLayer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ParallaxObjectLayer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\Parallax.WPF\Parallax.WPF.csproj">
+      <Project>{706d6fb8-6de7-44c0-8853-d4fda84855c2}</Project>
+      <Name>Parallax.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Static\Riven.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\Composition\p0.png" />
+    <Resource Include="Static\Composition\p1.png" />
+    <Resource Include="Static\Composition\p2.png" />
+    <Resource Include="Static\Composition\p3.png" />
+    <Resource Include="Static\Composition\p4.png" />
+    <Resource Include="Static\Composition\p6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

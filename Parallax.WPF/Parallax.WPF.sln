@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.WPF", "..\..\..\..\Parallax.WPF\Parallax.WPF\Parallax.WPF.csproj", "{706D6FB8-6DE7-44C0-8853-D4FDA84855C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.WPF", "Parallax.WPF\Parallax.WPF.csproj", "{706D6FB8-6DE7-44C0-8853-D4FDA84855C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.WPF.Samples", "..\..\..\..\Parallax.WPF\Parallax.WPF.Samples\Parallax.WPF.Samples.csproj", "{D347A7C0-D6DE-467A-B983-DD6260DDD601}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.WPF.Samples", "Parallax.WPF.Samples\Parallax.WPF.Samples.csproj", "{D347A7C0-D6DE-467A-B983-DD6260DDD601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
