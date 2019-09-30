@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Parallax.WPF.Demo"
         mc:Ignorable="d"
         Title="Parallax WPF Demo" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized" MinWidth="800" MinHeight="450">
-    <Frame Source="/Parallax.WPF.Demo;component/Slides/LandingPage.xaml" NavigationUIVisibility="Hidden">
+    <Frame Source="/Parallax.WPF.Demo;component/Views/Slides/NormalControlPage.xaml" NavigationUIVisibility="Hidden">
         
     </Frame>
 </Window>

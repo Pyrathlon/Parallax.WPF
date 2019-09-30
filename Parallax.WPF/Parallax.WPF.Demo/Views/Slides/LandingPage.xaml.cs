@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Parallax.WPF.Demo.Slides
+namespace Parallax.WPF.Demo.Views.Slides
 {
     /// <summary>
     /// Interaction logic for LandingPage.xaml

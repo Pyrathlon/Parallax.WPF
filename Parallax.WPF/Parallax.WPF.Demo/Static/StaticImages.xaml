@@ -1,12 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Parallax.WPF.Demo.Static">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                   
+                    xmlns:local="clr-namespace:Parallax.WPF.Demo.Static"
+                    x:Name="StaticImages"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-
-    <BitmapImage x:Key="RivenBackGround" UriSource="/Static/riven.jpg"/>
-    <BitmapImage x:Key="ThreshBackGround" UriSource="/Static/thresh.jpg"/>
-    <BitmapImage x:Key="HecarimBackGround" UriSource="/Static/hecarim.jpg"/>
-    <BitmapImage x:Key="YorickBackGround" UriSource="/Static/yorick.jpg"/>
-    <BitmapImage x:Key="BeastSlayerBackGround" UriSource="/Static/beastslayer.jpg"/>
+   
+        <BitmapImage   x:Key="RivenBackGround" UriSource="/Static/riven.jpg"/>
+        <BitmapImage x:Key="ThreshBackGround" UriSource="/Static/thresh.jpg"/>
+        <BitmapImage x:Key="HecarimBackGround" UriSource="/Static/hecarim.jpg"/>
+        <BitmapImage x:Key="YorickBackGround" UriSource="/Static/yorick.jpg"/>
+        <BitmapImage x:Key="BeastSlayerBackGround" UriSource="/Static/beastslayer.jpg"/>
+   
+    
     
 </ResourceDictionary>
+    
+    
