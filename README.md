@@ -18,3 +18,6 @@
 ```
 Check the sample project for more info.
 Will update the wiki aswell.
+
+# Demo
+https://i.imgur.com/Ikm9vrF.gif
