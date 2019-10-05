@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Parallax.WPF.Samples.ParallaxViews"
+                   
                     xmlns:Parallax="clr-namespace:Parallax.WPF.Controls;assembly=Parallax.WPF">
 
     <Grid x:Key="ParallaxContentView">

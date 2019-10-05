@@ -3,9 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Parallax.WPF.Samples"
-        xmlns:Parallax="clr-namespace:Parallax.WPF.Controls;assembly=Parallax.WPF"
-        xmlns:Base="clr-namespace:Parallax.WPF.Controls.Base;assembly=Parallax.WPF" x:Class="Parallax.WPF.Samples.MainWindow"
+        xmlns:local="clr-namespace:Parallax.WPF.Samples"    x:Class="Parallax.WPF.Samples.MainWindow"  
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -23,10 +21,6 @@
             <TabItem Header="Composition 2 Layers">
                 <ContentPresenter  Content="{StaticResource ParallaxCompositionView2}" />
             </TabItem>
-
         </TabControl>
-       
-       
-     
     </Grid>
 </Window>
