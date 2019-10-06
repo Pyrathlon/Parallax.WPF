@@ -19,5 +19,10 @@
 Check the sample project for more info.
 Will update the wiki aswell.
 
-# Demo
+# Demo GIF
 https://i.imgur.com/Ikm9vrF.gif
+
+# Another Demo, Webm
+http://webmshare.com/play/AWAzG
+
+
