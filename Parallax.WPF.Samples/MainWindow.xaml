@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Parallax.WPF.Samples"    x:Class="Parallax.WPF.Samples.MainWindow"  
+        xmlns:local="clr-namespace:Parallax.WPF.Samples"
+    xmlns:container="clr-namespace:Parallax.WPF.Controls.Container;assembly=Parallax.WPF"
+    xmlns:Parallax="clr-namespace:Parallax.WPF.Controls;assembly=Parallax.WPF" x:Name="window" x:Class="Parallax.WPF.Samples.MainWindow"  
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Parallax.WPF Samples" Height="450" Width="600" >
 
     <Grid>
         <TabControl>
@@ -15,12 +17,22 @@
             <TabItem Header="Image Layer">
                 <ContentPresenter  Content="{StaticResource ParallaxImageView}" />
             </TabItem>
-            <TabItem Header="Composition Layers">
+            <TabItem Header="Composition Image Layers">
                 <ContentPresenter  Content="{StaticResource ParallaxCompositionView}" />
             </TabItem>
-            <TabItem Header="Composition 2 Layers">
+            <TabItem Header="Composition Mix Layers">
                 <ContentPresenter  Content="{StaticResource ParallaxCompositionView2}" />
             </TabItem>
+            <TabItem Header="Parent Layers">
+                <ContentPresenter  Content="{StaticResource ParallaxParentOverlayView}" />
+            </TabItem>
+            <TabItem Header="Night Sky Login" >
+                <ContentPresenter  Content="{StaticResource ParallaxNightCompositionView}" />
+            </TabItem>
+            <TabItem Header="Scroller">
+                <container:ScrollParallaxContainer/>
+            </TabItem>
         </TabControl>
+
     </Grid>
 </Window>

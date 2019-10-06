@@ -8,11 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p0.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p3.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p4.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/composition/p6.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/nightcomposition/nebula%20aqua-pink.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/nightcomposition/stars%20small_1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("static/nightcomposition/stars-big_1_1_pc.png")]
 
 

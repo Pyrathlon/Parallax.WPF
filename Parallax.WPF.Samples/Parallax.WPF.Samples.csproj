@@ -116,5 +116,13 @@
     <Resource Include="Static\Composition\p4.png" />
     <Resource Include="Static\Composition\p6.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\NightComposition\source.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Static\NightComposition\Nebula.png" />
+    <Resource Include="Static\NightComposition\StarsSmall.png" />
+    <Resource Include="Static\NightComposition\StarsBig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

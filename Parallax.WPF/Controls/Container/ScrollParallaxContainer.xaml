@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Parallax.WPF.Controls.Container.ScrollParallaxContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Parallax.WPF.Controls.Container"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle Name="Backg" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop x:Name="lmao" Color="#FF000640" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding ScrollableHeight, ElementName=Scroller, Mode=OneWay}"></TextBlock>
+            <TextBlock Text="{Binding VerticalOffset, ElementName=Scroller, Mode=OneWay}"></TextBlock>
+        </StackPanel>
+        
+        <ScrollViewer CanContentScroll="False"  Name="Scroller" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" MouseMove="sp_MouseMove" >
+                <Grid Background="PaleVioletRed" Height="290" Width="200"/>
+                <Grid Background="Violet" Height="290" Width="200"/>
+                <Grid Background="OrangeRed" Height="290" Width="200"/>
+            </StackPanel>
+           
+        </ScrollViewer>
+    </Grid>
+</UserControl>

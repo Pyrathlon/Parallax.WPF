@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                    
                     xmlns:Parallax="clr-namespace:Parallax.WPF.Controls;assembly=Parallax.WPF">
+    
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 
     <Grid x:Key="ParallaxContentView">
         <Parallax:MouseAwareParallaxContainer Background="Gray" >
@@ -11,7 +13,7 @@
                         <Rectangle Fill="Magenta"  Width="100" Height="100" Margin="0,0,200,200" Opacity="0.4" ToolTip="I move both Horizontaly and Verticaly and opposite of the mouse movment!" />
                     </Parallax:ParallaxContentLayer.ContentSource>
                 </Parallax:ParallaxContentLayer>
-                <Parallax:ParallaxContentLayer  MouseTargetBehaviour="Follow"  >
+                <Parallax:ParallaxContentLayer   MouseTargetBehaviour="Follow"  >
                     <Parallax:ParallaxContentLayer.ContentSource>
                         <Rectangle Fill="Cyan" Width="100" Height="100" Opacity="0.4"  Margin="200,0,0,200" ToolTip="I move both Horizontaly and Verticaly and follow the mouse movment!"/>
                     </Parallax:ParallaxContentLayer.ContentSource>
@@ -21,7 +23,7 @@
                         <Rectangle Fill="Black" Width="100" Height="100" Opacity="0.4" Margin="0,200,200,0" ToolTip="I only move Verticaly and follow the mouse movment!"  />
                     </Parallax:ParallaxContentLayer.ContentSource>
                 </Parallax:ParallaxContentLayer>
-                <Parallax:ParallaxContentLayer  MouseTargetBehaviour="Leave" MouseAwareness="Horizontal">
+                <Parallax:ParallaxContentLayer    MouseTargetBehaviour="Leave" MouseAwareness="Horizontal">
                     <Parallax:ParallaxContentLayer.ContentSource>
                         <Rectangle Fill="Yellow"  Width="100" Height="100" Opacity="0.4" Margin="200,200,0,0" ToolTip="I only move Horizontaly and opposite of the mouse movment!" />
                     </Parallax:ParallaxContentLayer.ContentSource>
@@ -50,18 +52,88 @@
             </Parallax:MouseAwareParallaxContainer.Layers>
         </Parallax:MouseAwareParallaxContainer>
     </Grid>
-
+    
     <Grid x:Key="ParallaxCompositionView2">
         <Parallax:MouseAwareParallaxContainer Background="Gray" >
             <Parallax:MouseAwareParallaxContainer.Layers>
-                <Parallax:ParallaxImageLayer ImageSource="/Parallax.WPF.Samples;component/Static/Riven.jpg" HorizontalWeight="200" VerticalWeight="200" />
-                <Parallax:ParallaxContentLayer>
+                <Parallax:ParallaxImageLayer ImageSource="/Parallax.WPF.Samples;component/Static/Riven.jpg" HorizontalWeight="4.5" VerticalWeight="4.5" />
+                <Parallax:ParallaxContentLayer MouseTargetBehaviour="Follow" HorizontalWeight="1.95" >
                     <TextBlock  Text="I AM A BEAUTIFULLLL FLYINGG TEXT!!!"  Opacity="0.6" Background="Black" Foreground="White"  FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Parallax:ParallaxContentLayer>
+                </Parallax:ParallaxContentLayer>
             </Parallax:MouseAwareParallaxContainer.Layers>
         </Parallax:MouseAwareParallaxContainer>
     </Grid>
+    
+    <Grid x:Key="ParallaxParentOverlayView">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Parallax:MouseAwareParallaxContainer Background="Gray" >
+            <Parallax:MouseAwareParallaxContainer.Layers>
+                <Parallax:ParallaxContentLayer>
+                    <Parallax:ParallaxContentLayer.ContentSource>
+                        <Rectangle Fill="Red" Width="150" Height="150"/>
+                    </Parallax:ParallaxContentLayer.ContentSource>
+                </Parallax:ParallaxContentLayer>
+            </Parallax:MouseAwareParallaxContainer.Layers>
+        </Parallax:MouseAwareParallaxContainer>
+        <TextBlock FontSize="24" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" >You can't move me because there is an overlay infront of the control!!</TextBlock>
 
+        <Parallax:MouseAwareParallaxContainer HookOnParent="True" ParentElement="{x:Reference Overlay}" Grid.Column="1" Background="DarkGray">
+            <Parallax:MouseAwareParallaxContainer.Layers>
+                <Parallax:ParallaxContentLayer>
+                    <Parallax:ParallaxContentLayer.ContentSource>
+                        <Rectangle Fill="Green" Width="150" Height="150"/>
+                    </Parallax:ParallaxContentLayer.ContentSource>
+                </Parallax:ParallaxContentLayer>
+            </Parallax:MouseAwareParallaxContainer.Layers>
+        </Parallax:MouseAwareParallaxContainer>
+        <TextBlock FontSize="24" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" >You can move me because the parent attribute is set to the overlay object!</TextBlock>
+
+        <Rectangle x:Name="Overlay" Fill="#7F000000" Grid.ColumnSpan="2" Visibility="{Binding Path=IsChecked, Source={x:Reference OverlayHiderCheckbox} ,  Converter={StaticResource BooleanToVisibilityConverter}}" ></Rectangle>
+        <CheckBox x:Name="OverlayHiderCheckbox" Grid.ColumnSpan="2" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center">Show Overlay</CheckBox>
+
+    </Grid>
+
+    
+
+
+    <Grid x:Key="ParallaxNightCompositionView">
+        <Grid x:Name="LoginScreenGrid">
+            <Parallax:MouseAwareParallaxContainer Background="Gray" HookOnParent="True" ParentElement="{x:Reference LoginScreenGrid}" >
+            <Parallax:MouseAwareParallaxContainer.Effect>
+                <BlurEffect KernelType="Gaussian" RenderingBias="Quality" Radius="1"/>
+            </Parallax:MouseAwareParallaxContainer.Effect>
+            <Parallax:MouseAwareParallaxContainer.Layers>
+                <Parallax:ParallaxImageLayer ImageSource="/Parallax.WPF.Samples;component/Static/NightComposition/Nebula.png" VerticalWeight="4" HorizontalWeight="4" />
+                <Parallax:ParallaxImageLayer ImageSource="/Parallax.WPF.Samples;component/Static/NightComposition/StarsBig.png"  Opacity="0.8" HorizontalWeight="3" VerticalWeight="3" />
+                <Parallax:ParallaxImageLayer ImageSource="/Parallax.WPF.Samples;component/Static/NightComposition/StarsSmall.png" MouseTargetBehaviour="Follow"  Opacity="0.8" HorizontalWeight="2" VerticalWeight="2" />
+                           </Parallax:MouseAwareParallaxContainer.Layers>
+            </Parallax:MouseAwareParallaxContainer>
+            
+            <Rectangle Fill="#66323232"/>
+            
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="250" Background="#FF323232">
+                <Grid.Effect>
+                    <DropShadowEffect Opacity="0.4" BlurRadius="20"/>
+                </Grid.Effect>
+                <TextBlock Foreground="#FFA5A5A5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" FontSize="48" FontFamily="Segoe UI Light" Text="Login"/>
+                <StackPanel Margin="20,0" VerticalAlignment="Center">
+                    <StackPanel >
+                        <TextBlock Foreground="#FFA5A5A5" FontFamily="Segoe UI Semilight" FontSize="14" Text="Username:"/>
+                        <TextBox Background="{x:Null}" BorderBrush="#FF414141" FontSize="22" Foreground="#FFA5A5A5" CaretBrush="#FF5A5A5A"/>
+                    </StackPanel>
+                    <StackPanel >
+                        <TextBlock Foreground="#FFA5A5A5" FontFamily="Segoe UI Semilight" FontSize="14" Text="Password:"/>
+                        <PasswordBox Background="{x:Null}" BorderBrush="#FF414141" FontSize="22" Foreground="#FFA5A5A5" CaretBrush="#FF5A5A5A"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="#FFA5A5A5" Background="#FF3C3C3C" Width="66" Height="30" Margin="0,0,20,20" VerticalAlignment="Bottom">Login</Button>
+            </Grid>
+        </Grid>
+    </Grid>  
 
 
 </ResourceDictionary>

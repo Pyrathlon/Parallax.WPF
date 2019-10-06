@@ -51,13 +51,16 @@
   <ItemGroup>
     <Compile Include="Controls\Base\ParallaxContainer.cs" />
     <Compile Include="Controls\Base\ParallaxLayer.cs" />
-    <Compile Include="Controls\MouseAwareParallaxContainer.xaml.cs">
+    <Compile Include="Controls\Container\MouseAwareParallaxContainer.xaml.cs">
       <DependentUpon>MouseAwareParallaxContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ParallaxImageLayer.xaml.cs">
+    <Compile Include="Controls\Container\ScrollParallaxContainer.xaml.cs">
+      <DependentUpon>ScrollParallaxContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layers\ParallaxImageLayer.xaml.cs">
       <DependentUpon>ParallaxImageLayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ParallaxContentLayer.xaml.cs">
+    <Compile Include="Controls\Layers\ParallaxContentLayer.xaml.cs">
       <DependentUpon>ParallaxContentLayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enum\MouseAwarenessEnum.cs" />
@@ -88,15 +91,19 @@
     <Folder Include="Animations\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\MouseAwareParallaxContainer.xaml">
+    <Page Include="Controls\Container\MouseAwareParallaxContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\ParallaxImageLayer.xaml">
+    <Page Include="Controls\Container\ScrollParallaxContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\ParallaxContentLayer.xaml">
+    <Page Include="Controls\Layers\ParallaxImageLayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layers\ParallaxContentLayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

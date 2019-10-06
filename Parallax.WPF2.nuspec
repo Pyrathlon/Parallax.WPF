@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>parallaxwpf</id>
+    <version>1.0.0</version>
+    <title>Parallax.WPF</title>
+    <authors>TheSubGenius</authors>
+    <owners>Pyrathlon</owners>
+    <licenseUrl>https://github.com/Pyrathlon/Parallax.WPF/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Pyrathlon/Parallax.WPF</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Parallax support for WPF applications.</description>
+    <releaseNotes>Initial Pack Release</releaseNotes>
+    <copyright>Mozilla Public License 2.0</copyright>
+    <repository type="git" url="https://github.com/Pyrathlon/Parallax.WPF.git" branch="master" commit="b2749b90b06229c5ab76302547778172af30a34d" />
+    <tags>wpf parallax wpfui</tags>
+  </metadata>
+</package>

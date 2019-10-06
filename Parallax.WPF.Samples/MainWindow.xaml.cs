@@ -23,6 +23,9 @@ namespace Parallax.WPF.Samples
         public MainWindow()
         {
             InitializeComponent();
+         
         }
+
+       
     }
 }
